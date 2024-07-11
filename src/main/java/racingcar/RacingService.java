@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 클래스 이름 CarCollection
+ * 클래스 이름 RacingService
  *
  * 버전 정보 V1
  *
@@ -15,13 +15,26 @@ import java.util.List;
  * 저작권 주의
  */
 public class RacingService {
-    private static final int CAR_NAME_LENGTH = 5;
     CarCollection carCollection;
+    RacingCount count;
     RacingService() {
         registration();
+        readCount();
     }
 
     public void start() {
+    }
+    private void readCount() {
+        while (true) {
+            try {
+                System.out.println("시도할 회수는 몇회인가요?");
+                String readLine = Console.readLine();
+                count = new RacingCount(readLine);
+                break;
+            }catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private void registration() {
@@ -32,6 +45,7 @@ public class RacingService {
                 String[] names = readLine.split(",");
                 List<Car> cars = new ArrayList<>();
                 for (String name : names) {
+                    if(name.equals("")) throw new IllegalArgumentException("[ERROR] 차량의 이름을 공백으로 할 수 없습니다.");
                     Car car = new Car(name);
                     cars.add(car);
                 }
