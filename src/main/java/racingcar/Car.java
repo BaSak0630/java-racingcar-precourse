@@ -8,5 +8,12 @@ public class Car {
         this.name = name;
     }
 
+
     // 추가 기능 구현
+    public boolean validationName(int carNameLength) {
+        if (name.length() < carNameLength) {
+            return false;
+        }
+        return true;
+    }
 }

@@ -13,13 +13,11 @@ import java.util.List;
  */
 public class CarCollection {
     private static final int CAR_NAME_LENGTH = 5;
-    private List<Car> cars;
+    private  List<Car> cars;
 
-    public CarCollection() {
-
-    }
     public CarCollection(List<Car> cars) {
         validationNameSize(cars);
+        this.cars = cars;
     }
 
     private void validationNameSize(List<Car> cars) {
