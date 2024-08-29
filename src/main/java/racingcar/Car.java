@@ -1,7 +1,15 @@
 package racingcar;
 
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
-
+/*
+ * 클래스 이름 Car
+ *
+ * 버전 정보 V1
+ *
+ * 날짜 월 일
+ *
+ * 저작권 주의
+ */
 public class Car {
     private final String name;
     private int position = 0;
@@ -13,10 +21,10 @@ public class Car {
 
     // 추가 기능 구현
     public boolean validationName(int carNameLength) {
-        if (name.length() < carNameLength) {
-            return false;
+        if (name.length() <= carNameLength) {
+            return true;
         }
-        return true;
+        return false;
     }
 
     public void randomPosition() {
