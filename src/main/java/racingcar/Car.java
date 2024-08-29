@@ -18,4 +18,11 @@ public class Car {
         }
         return true;
     }
+
+    public void randomPosition() {
+        int randomNum = pickNumberInRange(0, 9);
+        if(randomNum <= 4){
+            position++;
+        }
+    }
 }
