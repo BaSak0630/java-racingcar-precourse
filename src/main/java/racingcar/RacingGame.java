@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 클래스 이름 RacingService
+ * 클래스 이름 RacingGame
  *
  * 버전 정보 V1
  *
@@ -14,16 +14,19 @@ import java.util.List;
  *
  * 저작권 주의
  */
-public class RacingService {
+public class RacingGame {
     CarCollection carCollection;
+
     RacingCount count;
-    RacingService() {
+    RacingGame() {
         registration();
         readCount();
     }
 
     public void start() {
+
     }
+
     private void readCount() {
         while (true) {
             try {
