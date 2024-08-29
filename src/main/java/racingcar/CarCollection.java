@@ -22,7 +22,7 @@ public class CarCollection {
 
     private void validationNameSize(List<Car> cars) {
         for(Car car : cars) {
-            if(car.validationName(CAR_NAME_LENGTH)){
+            if(!car.validationName(CAR_NAME_LENGTH)){
                 throw new IllegalArgumentException("[ERROR] 자동차의 이름은 5자 이하만 가능하다.");
             }
         }
