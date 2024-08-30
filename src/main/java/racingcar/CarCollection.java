@@ -1,5 +1,6 @@
 package racingcar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -38,6 +39,33 @@ public class CarCollection {
         StringBuilder result = new StringBuilder();
         for(Car car : cars) {
             result.append(car.printState()).append("\n");
+        }
+        System.out.println(result);
+    }
+    public void printFinalResult() {
+        StringBuilder result = new StringBuilder();
+        List<Integer> positions = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        int maxPosition = -1;
+        for(Car car : cars) {
+           positions.add(car.getPosition());
+        }
+        for(Integer position : positions) {
+            if(position > maxPosition) {
+                maxPosition = position;
+            }
+        }
+        result.append("최종 우승자 : ");
+        for(Car car : cars) {
+            if(car.getPosition() == maxPosition) {
+                names.add(car.getName());
+            }
+        }
+        for(int i = 0 ; i < names.size() ; i++) {
+            result.append(names.get(i));
+            if(i != names.size() - 1) {
+                result.append(", ");
+            }
         }
         System.out.println(result);
     }

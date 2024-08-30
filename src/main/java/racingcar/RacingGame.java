@@ -30,6 +30,7 @@ public class RacingGame {
             carCollection.printPlayResult();
             count.counting();
         }
+        carCollection.printFinalResult();
     }
 
     private void readCount() {
