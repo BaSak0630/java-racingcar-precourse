@@ -42,7 +42,7 @@ public class CarCollection {
         }
         System.out.println(result);
     }
-    public void printFinalResult() {
+    public String printFinalResult() {
         StringBuilder result = new StringBuilder();
         List<Integer> positions = new ArrayList<>();
         List<String> names = new ArrayList<>();
@@ -67,6 +67,6 @@ public class CarCollection {
                 result.append(", ");
             }
         }
-        System.out.println(result);
+        return result.toString();
     }
 }
