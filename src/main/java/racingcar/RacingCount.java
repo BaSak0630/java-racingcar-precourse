@@ -18,4 +18,14 @@ public class RacingCount {
             throw new IllegalArgumentException("[ERROR]시도할 회수는 몇회인가요?");
         }
     }
+    public boolean gameOver() {
+        if(this.count > 0){
+            return true;
+        }
+        return false;
+    }
+
+    public void counting() {
+        this.count--;
+    }
 }

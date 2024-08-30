@@ -24,7 +24,12 @@ public class RacingGame {
     }
 
     public void start() {
-
+        System.out.println("실행결과");
+        while (count.gameOver()) {
+            carCollection.randomMove();
+            carCollection.printPlayResult();
+            count.counting();
+        }
     }
 
     private void readCount() {

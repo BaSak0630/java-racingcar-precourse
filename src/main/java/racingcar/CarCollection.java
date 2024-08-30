@@ -27,4 +27,18 @@ public class CarCollection {
             }
         }
     }
+
+    public void randomMove() {
+        for(Car car : cars) {
+            car.randomPosition();
+        }
+    }
+
+    public void printPlayResult() {
+        StringBuilder result = new StringBuilder();
+        for(Car car : cars) {
+            result.append(car.printState()).append("\n");
+        }
+        System.out.println(result);
+    }
 }

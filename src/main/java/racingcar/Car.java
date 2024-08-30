@@ -29,8 +29,17 @@ public class Car {
 
     public void randomPosition() {
         int randomNum = pickNumberInRange(0, 9);
-        if(randomNum <= 4){
+        if(randomNum >= 4){
             position++;
         }
+    }
+
+    public String printState() {
+        StringBuilder state = new StringBuilder();
+        state.append(name).append(" : ");
+        for(int i = 1; i <= position; i++) {
+            state.append("-");
+        }
+        return state.toString();
     }
 }
